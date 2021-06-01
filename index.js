@@ -1,5 +1,6 @@
 const express = require('express');
 const { PORT } = require('./config/config');
+const morgan = require('morgan')
 const app = express();
 const mongoUrl = `mongodb://localhost:27017/myblogdb`
 // const mongoURL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`
@@ -7,7 +8,7 @@ const mongoUrl = `mongodb://localhost:27017/myblogdb`
 
 //Middleware
 app.use(express.json())
-
+app.use(morgan('tiny'))
 //Routes
 const postRouter = require('./router/postRoutes')
 
