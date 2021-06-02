@@ -1,8 +1,8 @@
 const express = require('express');
-const { PORT,MONGO_IP } = require('./config/config');
 const morgan = require('morgan')
 const app = express();
-const mongoUrl = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`
+const {MONGO_USER,MONGO_PASSWORD,MONGO_IP,MONGO_PORT,PORT} = require("./config/config")
+const mongoUrl = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/mydb?authSource=admin`
 // const mongoURL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`
 // const mongoURL = `mongodb://root:mypassword@$127.0.0.1:27017/myblogdb?authSource=admin`
 
