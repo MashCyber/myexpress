@@ -1,5 +1,5 @@
 //CRUD Operations here
-const Post = require('../models/postModels')
+const Post = require('../models/postModels');
 
 exports.getAllPosts = async (req,res,next) =>{
     try {

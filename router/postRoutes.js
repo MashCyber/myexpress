@@ -1,16 +1,17 @@
 const express = require('express')
 const postController = require('../contollers/postController')
+const { isLoggin } = require('../middleware/middleware')
 const router = express.Router()
 
 
 router.route('/')
-.get(postController.getAllPosts)
-.post(postController.createPost)
-.delete(postController.deleteAllPosts)
+.get(isLoggin, postController.getAllPosts)
+.post(isLoggin,postController.createPost)
+.delete(isLoggin,postController.deleteAllPosts)
 
 router.route('/:id')
-.get(postController.getOnePost)
-.patch(postController.updatePost)
-.delete(postController.deletePost)
+.get(isLoggin,postController.getOnePost)
+.patch(isLoggin,postController.updatePost)
+.delete(isLoggin,postController.deletePost)
 
 module.exports = router;
