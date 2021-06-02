@@ -46,13 +46,19 @@ app.use(
         resave: false,
         secure:false,
         httpOnly:true,
-        maxAge: 30000
+        maxAge: 3000000
       }
     }))
 
 app.use("/api/posts/",postRouter)
 app.use("/api/users/",userRouter)
 
+app.get('/admin',(req,res,next) =>{
+    res.status(200).json({
+        status:"Success",
+        message:"Admin page!!"
+    })
+})
 app.listen(PORT, ()=> {
     console.log(`Listening on port ${PORT}`)
 })
