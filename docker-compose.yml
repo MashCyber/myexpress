@@ -10,11 +10,11 @@ services:
             - blogapp
     blogapp:
         deploy:
-            replicas: 1
+            replicas: 3
             restart_policy:
                 condition: any
             update_config:
-                parallelism: 1
+                parallelism: 2
                 delay: 15s
                 failure_action: rollback
         build: .
