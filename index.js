@@ -50,8 +50,6 @@ app.use(
       }
     }))
 
-app.use("/api/posts/",postRouter)
-app.use("/api/users/",userRouter)
 
 app.get('/admin',(req,res,next) =>{
     res.status(200).json({
@@ -59,6 +57,11 @@ app.get('/admin',(req,res,next) =>{
         message:"Admin page!!"
     })
 })
+
+app.use("/api/posts/",postRouter)
+app.use("/api/users/",userRouter)
+
+
 app.listen(PORT, ()=> {
     console.log(`Listening on port ${PORT}`)
 })
